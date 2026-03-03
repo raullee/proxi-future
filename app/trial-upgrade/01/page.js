@@ -1,52 +1,9 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
+import Nav from '../../components/Nav';
+import Footer from '../../components/Footer';
 
-const featureRotations = [
-  {
-    title: "Advanced Document Generation",
-    desc: "Custom contracts, compliance documents, and business forms — generated instantly to match your industry requirements.",
-    trial: "Basic templates only",
-    full: "Unlimited document types"
-  },
-  {
-    title: "Research & Analysis Automation",
-    desc: "Market research, competitive analysis, and data processing — delivered as actionable insights, not raw information.",
-    trial: "Sample research only",
-    full: "Comprehensive automation"
-  },
-  {
-    title: "Client Relationship Management",
-    desc: "Follow-up sequences, project tracking, and communication workflows — keeping every client engaged automatically.",
-    trial: "Manual follow-ups only",
-    full: "Automated CRM workflows"
-  },
-  {
-    title: "Data Processing & Visualization",
-    desc: "Complex calculations, reporting dashboards, and data pipelines — turning raw data into business intelligence.",
-    trial: "Static reports only",
-    full: "Dynamic, real-time insights"
-  }
-];
-
-export default function TrialUpgrade() {
-  const [rotatingFeature, setRotatingFeature] = useState(featureRotations[0]);
-
-  useEffect(() => {
-    // Rotate feature every 3 seconds
-    const interval = setInterval(() => {
-      setRotatingFeature(prev => {
-        const currentIndex = featureRotations.indexOf(prev);
-        const nextIndex = (currentIndex + 1) % featureRotations.length;
-        return featureRotations[nextIndex];
-      });
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
+export default function FoodBusinessUpgrade() {
   return (
     <>
       <Nav />
@@ -58,7 +15,7 @@ export default function TrialUpgrade() {
             Ready for the full experience?
           </h1>
           <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', maxWidth: '540px', margin: '0 auto 32px', lineHeight: 1.5 }}>
-            You've seen what Proxi can do in 3 days. Here's how we can expand it — custom automation, advanced workflows, and unlimited capabilities tailored to your business.
+            You've seen what Proxi can do with <strong>staff contract generation and admin workflows</strong> in 3 days. Here's how we can expand it — inventory tracking, supplier coordination, and customer engagement automation — all tailored to your food business.
           </p>
           
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '32px' }}>
@@ -132,44 +89,46 @@ export default function TrialUpgrade() {
           </div>
         </section>
 
-        {/* ─── WHAT YOU GET ─── */}
+        {/* ─── FOOD BUSINESS FEATURES ─── */}
         <section style={{ maxWidth: '680px', margin: '0 auto', padding: '0 24px 48px' }}>
           <h2 style={{ fontSize: '1.8rem', fontWeight: 700, textAlign: 'center', marginBottom: '32px' }}>
-            What opens up with the full version
+            What opens up for your food business
           </h2>
           
           <div style={{ display: 'grid', gap: '24px' }}>
-            {/* Rotating feature */}
-            <div className="card" style={{ 
-              padding: '24px', 
-              borderLeft: '3px solid var(--accent)',
-              transition: 'all 0.3s ease',
-              minHeight: '140px'
-            }}>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px' }}>{rotatingFeature.title}</h3>
-              <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '12px', lineHeight: 1.6 }}>{rotatingFeature.desc}</p>
-              <div style={{ display: 'flex', gap: '24px', fontSize: '0.9rem' }}>
-                <span><strong>Trial:</strong> {rotatingFeature.trial}</span>
-                <span style={{ color: 'var(--accent)' }}><strong>Full:</strong> {rotatingFeature.full}</span>
-              </div>
-            </div>
-
-            {/* Static features */}
             <div className="card" style={{ padding: '24px', borderLeft: '3px solid var(--accent)' }}>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px' }}>Workflow Automation</h3>
-              <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '12px', lineHeight: 1.6 }}>Custom automations, integrations, and business logic that adapts to your specific needs and processes.</p>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px' }}>Document Generation</h3>
+              <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '12px', lineHeight: 1.6 }}>Employment contracts, supplier agreements, health compliance docs — generated instantly when you need them.</p>
               <div style={{ display: 'flex', gap: '24px', fontSize: '0.9rem' }}>
-                <span><strong>Trial:</strong> Basic tasks only</span>
-                <span style={{ color: 'var(--accent)' }}><strong>Full:</strong> Unlimited complexity</span>
+                <span><strong>Trial:</strong> Basic contracts only</span>
+                <span style={{ color: 'var(--accent)' }}><strong>Full:</strong> All business documents</span>
               </div>
             </div>
 
             <div className="card" style={{ padding: '24px', borderLeft: '3px solid var(--accent)' }}>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px' }}>24/7 Operations</h3>
-              <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '12px', lineHeight: 1.6 }}>Round-the-clock monitoring, alerts, and responses. Your business runs even when you're not there.</p>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px' }}>Inventory Management</h3>
+              <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '12px', lineHeight: 1.6 }}>Track stock levels, supplier orders, and waste management automatically. Get alerts before you run out.</p>
               <div style={{ display: 'flex', gap: '24px', fontSize: '0.9rem' }}>
-                <span><strong>Trial:</strong> Business hours only</span>
-                <span style={{ color: 'var(--accent)' }}><strong>Full:</strong> 24/7 monitoring</span>
+                <span><strong>Trial:</strong> Not included</span>
+                <span style={{ color: 'var(--accent)' }}><strong>Full:</strong> Full automation</span>
+              </div>
+            </div>
+
+            <div className="card" style={{ padding: '24px', borderLeft: '3px solid var(--accent)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px' }}>Staff Coordination</h3>
+              <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '12px', lineHeight: 1.6 }}>Schedule shifts, manage leave requests, track hours, and handle payroll documentation seamlessly.</p>
+              <div style={{ display: 'flex', gap: '24px', fontSize: '0.9rem' }}>
+                <span><strong>Trial:</strong> Basic scheduling only</span>
+                <span style={{ color: 'var(--accent)' }}><strong>Full:</strong> Complete staff management</span>
+              </div>
+            </div>
+
+            <div className="card" style={{ padding: '24px', borderLeft: '3px solid var(--accent)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px' }}>Customer Engagement</h3>
+              <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '12px', lineHeight: 1.6 }}>WhatsApp order confirmations, loyalty program management, and feedback collection automation.</p>
+              <div style={{ display: 'flex', gap: '24px', fontSize: '0.9rem' }}>
+                <span><strong>Trial:</strong> Manual only</span>
+                <span style={{ color: 'var(--accent)' }}><strong>Full:</strong> Automated engagement</span>
               </div>
             </div>
 
@@ -177,8 +136,8 @@ export default function TrialUpgrade() {
               <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px' }}>Priority Support</h3>
               <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '12px', lineHeight: 1.6 }}>WhatsApp access to your PA whenever you need it, with our engineering team backing it up.</p>
               <div style={{ display: 'flex', gap: '24px', fontSize: '0.9rem' }}>
-                <span><strong>Trial:</strong> Standard response</span>
-                <span style={{ color: 'var(--accent)' }}><strong>Full:</strong> Priority support</span>
+                <span><strong>Trial:</strong> Business hours</span>
+                <span style={{ color: 'var(--accent)' }}><strong>Full:</strong> Extended support</span>
               </div>
             </div>
           </div>
