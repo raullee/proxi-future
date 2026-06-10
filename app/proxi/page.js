@@ -92,6 +92,33 @@ Here are the terms:
     ],
     note: 'A thinking tool, not legal advice.',
   },
+  {
+    id: 'council',
+    keyword: 'COUNCIL',
+    title: 'The Council',
+    explain:
+      'For the decision that is too big for one opinion. Describe it, and five advisors argue it out before you commit. They are allowed to disagree.',
+    prompt: `You are my council. I am about to make a decision. Convene five advisors:
+
+1. THE SKEPTIC — argues why this fails.
+2. THE ACCOUNTANT — what it costs, in money and in time.
+3. THE LAWYER — what binds me, what protects me, worst case.
+4. THE OPERATOR — what executing this actually takes, step by step.
+5. THE FUTURE ME — how this looks in five years.
+
+Each speaks in three lines max. They are allowed to disagree.
+Then give me the council's verdict: proceed, modify, or drop. One line.
+
+Here is the decision:
+[DESCRIBE THE DECISION HERE]`,
+    uses: [
+      'The big purchase you keep justifying',
+      'Job offers and career moves',
+      'Signing a lease or ending one',
+      'Launching the thing or shelving it',
+      'Anything above your monthly salary',
+    ],
+  },
 ];
 
 function CopyButton({ text, id }) {
@@ -268,7 +295,7 @@ export default function ProxiPanel() {
           <a href="/" style={{ fontWeight: 800, letterSpacing: '0.08em', color: C.cream, textDecoration: 'none', fontSize: '0.95rem' }}>
             PROXI
           </a>
-          <nav style={{ display: 'flex', gap: '8px' }}>
+          <nav style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
             {SECTIONS.map((s) => (
               <a
                 key={s.id}
