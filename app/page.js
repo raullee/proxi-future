@@ -58,7 +58,7 @@ const patterns = [
   { re: /(draft|write.*(email|letter|memo|proposal|note)|reply to|compose)/i, r: ["Drafted ✓<br/>Three versions in your style:<br/>◆ V1 · warm + concise (recommended)<br/>◆ V2 · formal + thorough<br/>◆ V3 · brief + direct<br/>In your drafts. Pick one, approve, I send."] },
   { re: /(book|schedule|set up.*(call|meeting|appointment)|arrange)/i, r: ["Scheduling ✓<br/>◆ Pulled both calendars; 3 viable slots<br/>◆ A: Wed 15:00 to 16:00 · B: Thu 10:00 to 11:00 · C: Fri 14:00<br/>◆ Sent all three to them. First reply wins. Zoom link pre-generated."] },
   { re: /(bm|bahasa|melayu|translate|terjemah|中文|mandarin|manglish)/i, r: ["Baik ✓<br/>Saya boleh respon dalam BM, English, 中文, atau campuran. Client WhatsApp dalam bahasa rojak → saya jawab dalam bahasa yang sama. Email formally in English → formal English reply. Same tone as you."] },
-  { re: /(price|cost|how much|bayar|berapa|charge|pricing|plan)/i, r: ["Three tiers ✓<br/>◆ <em>Free</em> · OpenClaw · self-host · RM 0<br/>◆ <em>Proxi</em> · RM 199/mo + RM 500 setup<br/>◆ <em>Max</em> · RM 499/mo + RM 2,000 setup<br/>◆ Enterprise · custom<br/>72h full Max trial on invite redemption. Want an invite?"] },
+  { re: /(price|cost|how much|bayar|berapa|charge|pricing|plan)/i, r: ["Two business plans ✓ (list prices under test)<br/>◆ <em>Proxi</em> · RM 199/mo + RM 500 setup<br/>◆ <em>Max</em> · RM 499/mo + RM 2,000 setup<br/>◆ Enterprise · custom<br/>72h full Max trial on invite redemption. Want an invite?"] },
   { re: /(what.*can.*you|capabilit|help|how.*work|what.*do)/i, r: ["I handle:<br/>◆ Email triage + drafts · calendar + rescheduling · follow-ups any cadence<br/>◆ Research with citations · client intake + conflicts · invoice chasers<br/>◆ Custom workflows (Max tier) · multi-language (BM/EN/中文)<br/>◆ On WhatsApp, email, Slack; no new app.<br/>In <em>demo mode</em> I show what it feels like. Try a chip on the left."] },
   { re: /(demo|book.*call|sales|talk.*team|enterprise)/i, r: ["Sorted ✓<br/>Enterprise → human within 2h. For now: <a href='/waitlist' style='color:inherit;text-decoration:underline'>/waitlist</a> or invite at <a href='/invite' style='color:inherit;text-decoration:underline'>/invite</a>. Want me to draft an email to the sales team?"] },
   { re: /(thanks|thank you|thx|terima kasih|tq)/i, r: ["Any time. ✓ In production I'd be here every hour of the week. This is just a taste."] },
@@ -89,19 +89,6 @@ export default function ProxiPage() {
   const [hRange, setHRange] = useState(12);
   const [rRange, setRRange] = useState(500);
   const [plan, setPlan] = useState(499);
-
-  const [ideas, setIdeas] = useState([
-    { rating: "🔥", text: "Auto-draft replies to 'is this still available?' DMs with a qualifying follow-up + calendar slot", who: "@nina · 14 Apr" },
-    { rating: "🔥", text: "Every time a client mentions a book / film, file it in their profile so I can reference it later", who: "@shannon · 14 Apr" },
-    { rating: "👍", text: "Weekly roundup of everyone who hasn't replied to me in 14+ days with a draft nudge", who: "@amir · 12 Apr" },
-    { rating: "🔥", text: "Reschedule any meeting if I mention I'm feeling unwell; default to 48h later, ask for approval", who: "@raul · 10 Apr" },
-    { rating: "🤔", text: "Summarise my entire inbox every morning at 7am in one paragraph", who: "@kavita · 09 Apr" },
-    { rating: "👍", text: "Auto-thank donors and send receipts; for a non-profit's WhatsApp line", who: "@alim · 09 Apr" },
-    { rating: "🚫", text: "Post on my behalf without my approval (too risky)", who: "@jason · 08 Apr" },
-    { rating: "🔥", text: "When someone asks about rates, qualify first: budget, timeline, scope. Only then quote.", who: "@melissa · 07 Apr" },
-    { rating: "👍", text: "Birthday reminders for clients with a draft message in my tone", who: "@iqbal · 06 Apr" },
-    { rating: "🤔", text: "Answer 'what's your address' differently depending on trust level", who: "@lynn · 05 Apr" },
-  ]);
 
   // Hero chat scene loop
   useEffect(() => {
@@ -199,20 +186,7 @@ export default function ProxiPage() {
   const monthlyHours = hRange * 4.33;
   const monthlyValue = monthlyHours * rRange;
   const net = monthlyValue - plan;
-  const multi = Math.round(monthlyValue / plan);
   const fmtRM = (v) => "RM " + Math.round(v).toLocaleString("en-MY");
-
-  const addIdea = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const name = form.elements[0].value || "@anon";
-    const idea = form.elements[2].value;
-    if (!idea) return;
-    const newIdea = { rating: "🤔", text: idea, who: `${name} · ${new Date().toLocaleDateString("en-MY", { month: "short", day: "numeric" })} · pending` };
-    setIdeas([newIdea, ...ideas]);
-    form.reset();
-    setTimeout(() => setIdeas((prev) => [{ ...prev[0], rating: "🔥", who: prev[0].who.replace("pending", "rated by Naoise") }, ...prev.slice(1)]), 2400);
-  };
 
   const turnsLeft = MAX_TURNS - turnsUsed;
 
@@ -430,7 +404,7 @@ export default function ProxiPage() {
         .px-roi-live .out .grid .g{padding:12px;background:var(--panel);border:1px solid var(--line)}
         .px-roi-live .out .grid .g b{display:block;font-family:"Instrument Serif",serif;font-style:italic;font-size:22px;color:var(--phos)}
         .px-roi-live .out .grid .g span{font-size:10px;color:var(--mute);letter-spacing:.18em;text-transform:uppercase}
-        .px-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+        .px-plans{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
         @media (max-width:900px){.px-plans{grid-template-columns:1fr}}
         .px-plan{background:var(--panel);border:1px solid var(--line);padding:36px 32px;display:flex;flex-direction:column;position:relative;min-height:480px}
         .px-plan.featured{background:linear-gradient(145deg,rgba(122,255,177,.14),rgba(122,255,177,.02));border-color:var(--phos);box-shadow:0 0 40px rgba(122,255,177,.1)}
@@ -583,8 +557,8 @@ export default function ProxiPage() {
 
       <div className="px-sysbar">
         <div className="px-wrap">
-          <span className="live">System · online · Naoise + 2 operators · replying now</span>
-          <span>Frontier-class AI · KL nodes · 12ms median · <a href="#naoise-demo">Try it →</a></span>
+          <span className="live">System · online · Naoise · replying now</span>
+          <span>WhatsApp operator for Malaysian businesses · <a href="#naoise-demo">Try it →</a></span>
         </div>
       </div>
 
@@ -623,7 +597,7 @@ export default function ProxiPage() {
 
       <nav className="px-nav">
         <div className="inner">
-          <a className="px-brand" href="#top"><div className="logo">P</div><strong>Proxi.my</strong><span className="beta">Q2 · Beta</span></a>
+          <a className="px-brand" href="#top"><div className="logo">P</div><strong>Proxi.my</strong></a>
           <div className="px-nav-links">
             <a href="/proxi-max">Proxi Max</a>
             <a href="/pricing">Pricing</a>
@@ -642,7 +616,7 @@ export default function ProxiPage() {
       <header className="px-hero" id="top">
         <div className="px-wrap px-hero-grid">
           <div>
-            <div className="px-over">WA://operator.online · 47 seats remaining</div>
+            <div className="px-over">WA://operator.online · for SMEs</div>
             <h1 className="px-h1">Your WhatsApp,<br /><span className="sub-line">answered.</span><span className="cursor" /></h1>
             <p className="px-lede">Proxi runs a dedicated AI operator on your WhatsApp. It triages, qualifies, books, drafts, follows up; <strong>like a senior associate who never misses a message</strong>. You keep the phone. You keep the brand. One subscription replaces a team.</p>
             <div className="px-invite-bar">
@@ -666,8 +640,8 @@ export default function ProxiPage() {
               <a className="px-btn ghost" href="/waitlist">▸ Join waitlist</a>
             </div>
             <div className="px-hero-meta">
-              <div>Uptime · 30d<strong>99.98%</strong></div>
-              <div>Median reply<strong>3.4 sec</strong></div>
+              <div>Channel<strong>WhatsApp</strong></div>
+              <div>Escalation<strong>To a human</strong></div>
               <div>Languages<strong>BM · EN · 中文</strong></div>
             </div>
           </div>
@@ -713,7 +687,7 @@ export default function ProxiPage() {
               ["/always-on","a","03 · Always on","168 hours","a week.","Your clients don&apos;t stop at 6pm. A Proxi operator works every hour. No overtime. No burnout.","/always-on"],
               ["/nothing-falls","f","04 · Nothing falls","Nothing falls","through.","Every follow-up tracked. Every commitment remembered. The compound effect of never dropping the ball.","/nothing-falls"],
               ["/not-a-chatbot","c","05 · Not a chatbot","Not a","chatbot.","Chatbots answer questions. Operators take initiative. Your PA knows your clients, your tone, your patterns.","/not-a-chatbot"],
-              ["/discretion","d","06 · Discretion","Discretion","built in.","Your data is encrypted. Your PA doesn&apos;t gossip or change jobs. Confidentiality is the foundation.","/discretion"],
+              ["/discretion","d","06 · Discretion","Discretion","built in.","Your data is handled under Malaysia&apos;s PDPA. Your operator doesn&apos;t gossip or change jobs. Confidentiality is the foundation.","/discretion"],
             ].map(([href,ic,no,h1,h2,p,slug]) => (
               <a className="px-reason" href={href} key={href}>
                 <span className="icon">{ic}</span>
@@ -731,7 +705,7 @@ export default function ProxiPage() {
         <div className="px-wrap">
           <div className="px-sec-h">
             <span className="tag">/05 · Markets</span>
-            <h2>Built for the <em>independent</em> professional.</h2>
+            <h2>Built for <em>Malaysian</em> SMEs.</h2>
             <div className="r"><a href="/markets">Full market pages →</a></div>
           </div>
           <div className="px-markets">
@@ -845,7 +819,7 @@ export default function ProxiPage() {
               <div className="metric"><b>28</b><span>posts published · week 1</span><small>▸ across 6 platforms</small></div>
               <div className="metric"><b>6</b><span>platforms managed</span><small>▸ IG · Threads · Blog · Twitter · LinkedIn · TikTok</small></div>
               <div className="metric"><b>24/7</b><span>always-on presence</span><small>▸ under 5min DM response</small></div>
-              <div className="metric"><b>0</b><span>commitments dropped</span><small>▸ 90 days live</small></div>
+              <div className="metric"><b>3</b><span>languages handled</span><small>▸ BM · EN · 中文</small></div>
             </div>
             <div className="copy">
               <h3>Our first <em>Digital Engagement Officer.</em></h3>
@@ -864,38 +838,6 @@ export default function ProxiPage() {
                 <a className="px-btn" href="/pa4pa">▸ PA4PA training</a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="get-started" style={{borderTop:"1px solid var(--line)"}}>
-        <div className="px-wrap">
-          <div className="px-sec-h">
-            <span className="tag">/08 · Get started</span>
-            <h2>What would you want <em>your PA</em> to do?</h2>
-            <div className="r">Pitch Naoise · she rates every one</div>
-          </div>
-          <div className="px-wall">
-            <div className="wh">
-              <h4>The <em>Wall</em></h4>
-              <div className="legend">Ratings:<span>🔥 brilliant</span><span>👍 solid</span><span>🤔 nuance</span><span>🚫 not-for-proxi</span></div>
-            </div>
-            <div className="px-wall-ideas">
-              {ideas.map((idea, i) => (
-                <div className="idea" key={i}>
-                  <span className="rating">{idea.rating}</span>
-                  <span>{idea.text}</span>
-                  <span className="who">{idea.who}</span>
-                </div>
-              ))}
-            </div>
-            <form className="px-wall-form" onSubmit={addIdea}>
-              <input type="text" name="name" placeholder="Your name or @handle" required />
-              <input type="email" name="email" placeholder="Email" required />
-              <input type="text" name="idea" placeholder="What should Proxi do? Pitch it in one sentence." required />
-              <button type="submit" className="px-btn solid">▸ Pitch</button>
-            </form>
-            <p style={{marginTop:"12px",fontSize:"11px",letterSpacing:".18em",textTransform:"uppercase",color:"var(--mute)"}}>Naoise reviews every pitch within 24h. Top-rated ideas shape the roadmap.</p>
           </div>
         </div>
       </section>
@@ -929,12 +871,12 @@ export default function ProxiPage() {
             </div>
             <div className="out">
               <div className="big">{fmtRM(net)}</div>
-              <div className="lbl">Net value returned per month</div>
+              <div className="lbl">Illustrative net value per month · based on your inputs</div>
               <div className="grid">
                 <div className="g"><b>{Math.round(monthlyHours)} hrs</b><span>Time saved / month</span></div>
                 <div className="g"><b>{fmtRM(monthlyValue)}</b><span>Value · at your rate</span></div>
                 <div className="g"><b>{fmtRM(plan)}</b><span>Proxi cost / month</span></div>
-                <div className="g"><b>{multi}×</b><span>Return multiple</span></div>
+                <div className="g"><b>Estimate</b><span>Illustrative · your inputs</span></div>
               </div>
               <a className="px-btn solid" href="/roi" style={{marginTop:"18px",width:"100%",justifyContent:"center"}}>▸ Open full ROI page</a>
             </div>
@@ -947,31 +889,17 @@ export default function ProxiPage() {
           <div className="px-sec-h">
             <span className="tag">/10 · Plans</span>
             <h2>Simple plans. <em>Real</em> value.</h2>
-            <div className="r">No lock-in · <a href="/pricing">Full comparison →</a></div>
+            <div className="r">No lock-in · List prices under test · <a href="/pricing">Full comparison →</a></div>
           </div>
           <div className="px-plans">
-            <div className="px-plan">
-              <span className="tier-tag">00 · Free</span>
-              <h3>OpenClaw</h3>
-              <div className="price">RM0<sub>/month</sub></div>
-              <div className="setup">Self-host · bring your own keys</div>
-              <div className="desc">Build your own AI PA with our open-source framework. Same underlying operator kernel.</div>
-              <ul>
-                <li>OpenClaw kernel · MIT license</li>
-                <li>Community Discord &amp; guides</li>
-                <li>Self-hosted on your infra</li>
-                <li>No support SLA</li>
-              </ul>
-              <a className="px-btn ghost" href="/pricing/free">▸ Explore OpenClaw</a>
-            </div>
             <div className="px-plan">
               <span className="tier-tag">01 · Proxi</span>
               <h3>Proxi</h3>
               <div className="price">RM199<sub>/month</sub></div>
               <div className="setup">+ RM500 one-time setup</div>
-              <div className="desc">Your personal operator on WhatsApp. Email, calendar, follow-ups, drafting, research.</div>
+              <div className="desc">Your business&apos;s operator on WhatsApp. Enquiries, bookings, follow-ups, drafting, research.</div>
               <ul>
-                <li>Dedicated operator, trained on you</li>
+                <li>Dedicated operator, trained on your business</li>
                 <li>WhatsApp + email + Slack channels</li>
                 <li>72h full Max trial on redemption</li>
                 <li>7-day money-back guarantee</li>
@@ -980,7 +908,7 @@ export default function ProxiPage() {
               <a className="px-btn solid" href="/pricing/proxi">▸ Get Proxi</a>
             </div>
             <div className="px-plan featured">
-              <span className="ribbon">Most chosen</span>
+              <span className="ribbon">Full service</span>
               <span className="tier-tag">02 · Max</span>
               <h3>Proxi Max</h3>
               <div className="price">RM499<sub>/month</sub></div>
@@ -1030,7 +958,7 @@ export default function ProxiPage() {
       <section style={{paddingTop:0}}>
         <div className="px-wrap">
           <div className="px-trust">
-            <div className="px-tb"><span className="ic">e</span>End-to-end encrypted · <a href="/discretion" style={{color:"var(--phos)",borderBottom:"1px solid var(--phos)",paddingBottom:"1px"}}>pledge →</a></div>
+            <div className="px-tb"><span className="ic">e</span>Handled under PDPA 2010 · <a href="/discretion" style={{color:"var(--phos)",borderBottom:"1px solid var(--phos)",paddingBottom:"1px"}}>pledge →</a></div>
             <div className="px-tb"><span className="ic">p</span>Your data is never used for training</div>
             <div className="px-tb"><span className="ic">x</span>Cancel any time · no contracts</div>
             <div className="px-tb"><span className="ic">g</span>7-day money-back guarantee</div>
@@ -1048,12 +976,12 @@ export default function ProxiPage() {
             <details open><summary>Do I need to install any app?</summary><div className="a">No. Your Proxi operator meets you where you already work; WhatsApp, email, Slack, iMessage, whatever you use. See <a href="/always-on">/always-on</a>.</div></details>
             <details><summary>How is this different from ChatGPT or Siri?</summary><div className="a">Those are tools you operate. Proxi is an operator that works for you. It knows your clients, remembers your preferences, takes initiative, gets better every week. Full argument at <a href="/not-a-chatbot">/not-a-chatbot</a>.</div></details>
             <details><summary>What AI powers Proxi? Can you name the models?</summary><div className="a">We run a <b>frontier-class, multi-model operator core</b>; always on the best-available reasoning model for the task at hand. We deliberately don&apos;t tie our name to any single AI vendor: when a better model ships, your Naoise gets smarter overnight without you doing a thing.</div></details>
-            <details><summary>Is my information safe?</summary><div className="a">Absolutely. All data is encrypted at rest and in transit, never shared, never sold, never used for training. NDAs on request. Audit logs on Max. See our <a href="/discretion">Discretion pledge</a>.</div></details>
+            <details><summary>Is my information safe?</summary><div className="a">Your data is handled under Malaysia&apos;s Personal Data Protection Act 2010 and never sold. Our AI operator reads your messages on our servers in order to act on them, so this is not end-to-end encryption. NDAs on request. See our <a href="/discretion">Discretion pledge</a>.</div></details>
             <details><summary>What tasks can Proxi handle?</summary><div className="a">Email, calendar, follow-ups, drafting, research, workflow automation, process orchestration, client coordination. Try it live at <a href="#naoise-demo">the Naoise sandbox ↑</a>. Industries at <a href="/markets">/markets</a>.</div></details>
             <details><summary>Can I talk to Naoise directly before committing?</summary><div className="a">Yes; message <b>+60 12-747 8227</b> on WhatsApp with the word <b>&quot;PROXI&quot;</b>. Naoise enters demo-operator mode and answers in real time. Or DM <a href="https://instagram.com/asknaoise" target="_blank" rel="noopener noreferrer">@asknaoise on Instagram</a>.</div></details>
             <details><summary>Can I try before committing?</summary><div className="a">Yes. Every invitation code unlocks 72 hours of full Proxi Max access. No credit card required. After 72 hours, you decide. See <a href="/trial-upgrade">trial upgrade terms</a>.</div></details>
             <details><summary>What if I want to cancel?</summary><div className="a">Cancel any time. No contracts, no penalties, no retention calls. 7-day money-back guarantee. See <a href="/terms">Terms</a>.</div></details>
-            <details><summary>Do you offer something for people who already have a human PA?</summary><div className="a">Yes; <a href="/pa4pa">PA4PA (PA for PA)</a>. A 4-week intensive that trains your human PA to use AI tools so they deliver 5× the output. RM 75/mo (reduced from RM 499).</div></details>
+            <details><summary>Do you offer something for people who already have a human PA?</summary><div className="a">Yes; <a href="/pa4pa">PA4PA (PA for PA)</a>. A 4-week intensive that trains your human PA to use AI tools so they deliver 5× the output. RM 75/mo.</div></details>
             <details><summary>Do you support BM and mixed language?</summary><div className="a">Yes; BM, English, Chinese, and mixed. Naoise detects the sender&apos;s language and responds in kind, in your voice. Tested against real Malaysian conversations.</div></details>
           </div>
         </div>
@@ -1063,7 +991,7 @@ export default function ProxiPage() {
         <div className="px-wrap">
           <div className="px-over" style={{justifyContent:"center"}}>End transmission</div>
           <h2>Never miss a <em>message.</em><br />Never miss a <em>customer.</em></h2>
-          <p>Stop doing work that isn&apos;t yours. Proxi handles it, discreetly, every hour of the week. Invitations are rolling; the current cohort closes when full.</p>
+          <p>Stop doing work that isn&apos;t yours. Proxi handles it, discreetly, every hour of the week. Invitations are rolling.</p>
           <div className="actions">
             <a className="px-btn solid" href="#top">▸ I have an invite code</a>
             <a className="px-btn wa" href="https://wa.me/60127478227?text=PROXI" target="_blank" rel="noopener noreferrer">▸ Talk to Naoise · WhatsApp</a>
@@ -1100,7 +1028,6 @@ export default function ProxiPage() {
             <div>
               <h5>Plans &amp; setup</h5>
               <a href="/pricing">Pricing overview</a>
-              <a href="/pricing/free">Free · OpenClaw</a>
               <a href="/pricing/proxi">Proxi · RM 199</a>
               <a href="/proxi-max">Proxi Max · RM 499</a>
               <a href="/pricing/enterprise">Enterprise</a>
@@ -1113,7 +1040,6 @@ export default function ProxiPage() {
               <a href="/naoise">Case study · Naoise</a>
               <a href="/markets">All 14 markets</a>
               <a href="/blog">Blog · 12 posts</a>
-              <a href="/get-started">The Wall · ideas</a>
               <a href="/cost">Cost breakdown</a>
               <a href="/human-pa">AI vs Human PA</a>
               <a href="/pa4pa">PA4PA training</a>

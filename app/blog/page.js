@@ -43,7 +43,7 @@ const POSTS = [
     category: 'Safety & Trust',
     color: '#ef4444',
     title: "What NOT to Tell Your AI PA (And What's Perfectly Fine)",
-    excerpt: "Your PA can handle client names, meeting details, and document drafts. Don't share your banking passwords, IC number, or medical records. Here's the clear line between useful delegation and unnecessary risk — plus how encryption keeps everything else safe.",
+    excerpt: "Your PA can handle client names, meeting details, and document drafts. Don't share your banking passwords, IC number, or medical records. Here's the clear line between useful delegation and unnecessary risk, plus how PDPA applies to everything else.",
     slug: 'safety-guide',
   },
   {

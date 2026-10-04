@@ -37,22 +37,20 @@ function TierCard({ tier, price, tagline, features, cta, ctaLink, highlight, bad
 }
 
 const COMPARE_ROWS = [
-  { feature: 'Dedicated AI PA', free: false, proxi: true, max: true },
-  { feature: 'WhatsApp access', free: false, proxi: true, max: true },
-  { feature: 'Email management', free: false, proxi: true, max: true },
-  { feature: 'Google Calendar sync', free: false, proxi: true, max: true },
-  { feature: 'Follow-ups & reminders', free: false, proxi: true, max: true },
-  { feature: 'Admin & data entry', free: false, proxi: true, max: true },
-  { feature: 'Research & summaries', free: false, proxi: true, max: true },
-  { feature: 'Custom workflow design', free: false, proxi: false, max: true },
-  { feature: 'Advanced integrations (APIs, databases)', free: false, proxi: false, max: true },
-  { feature: 'Workflow orchestration', free: false, proxi: false, max: true },
-  { feature: 'Process automation', free: false, proxi: false, max: true },
-  { feature: 'Stripe & payments', free: false, proxi: false, max: true },
-  { feature: 'Response time', free: '—', proxi: '15 min', max: '5 min' },
-  { feature: 'Messages/month', free: '—', proxi: '2,000', max: 'Unlimited' },
-  { feature: 'Self-hosted', free: true, proxi: false, max: false },
-  { feature: 'Open source', free: true, proxi: false, max: false },
+  { feature: 'Dedicated AI operator', proxi: true, max: true },
+  { feature: 'WhatsApp access', proxi: true, max: true },
+  { feature: 'Email management', proxi: true, max: true },
+  { feature: 'Google Calendar sync', proxi: true, max: true },
+  { feature: 'Follow-ups & reminders', proxi: true, max: true },
+  { feature: 'Admin & data entry', proxi: true, max: true },
+  { feature: 'Research & summaries', proxi: true, max: true },
+  { feature: 'Custom workflow design', proxi: false, max: true },
+  { feature: 'Advanced integrations (APIs, databases)', proxi: false, max: true },
+  { feature: 'Workflow orchestration', proxi: false, max: true },
+  { feature: 'Process automation', proxi: false, max: true },
+  { feature: 'Stripe & payments', proxi: false, max: true },
+  { feature: 'Response time', proxi: '15 min', max: '5 min' },
+  { feature: 'Messages/month', proxi: '2,000', max: 'Unlimited' },
 ];
 
 function CompareCell({ val }) {
@@ -74,33 +72,20 @@ export default function Pricing() {
             Pick your <span className="gradient-text">operator.</span>
           </h1>
           <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', maxWidth: '520px', margin: '0 auto 60px', lineHeight: 1.6 }}>
-            From DIY to full workflow automation. Start free, scale when it hurts.
+            WhatsApp operators for Malaysian businesses, from front desk to full workflow automation. List prices under test.
           </p>
         </section>
 
-        {/* ─── TIER CARDS (3 main) ─── */}
+        {/* ─── TIER CARDS ─── */}
         <section style={{ maxWidth: '960px', margin: '0 auto', padding: '0 24px 60px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
-            <TierCard
-              tier="Free"
-              price="RM0"
-              tagline="Build your own AI PA with OpenClaw. Same tech, self-hosted."
-              features={[
-                "OpenClaw open-source framework",
-                "Same tech that powers Proxi",
-                "Self-hosted, full control",
-                "Community support",
-              ]}
-              cta="Learn more →"
-              ctaLink="/pricing/free"
-            />
             <TierCard
               tier="Proxi"
               price="RM199/mo"
               setup="RM500"
-              tagline="Your PA. Email, calendar, follow-ups — handled."
+              tagline="Your business on WhatsApp. Enquiries, bookings, follow-ups, handled."
               features={[
-                "Dedicated AI personal assistant",
+                "Dedicated AI operator for your business",
                 "All AI costs included — no API keys needed",
                 "WhatsApp + Email + Calendar",
                 "Google Workspace integration",
@@ -115,7 +100,7 @@ export default function Pricing() {
               tier="Proxi Max"
               price="RM499/mo"
               setup="RM2,000"
-              tagline="Your PA on superhero mode. Admin + custom workflows + advanced automation."
+              tagline="Your operator on superhero mode. Admin + custom workflows + advanced automation."
               highlight={true}
               badge="Founding: setup fee waived — invite only"
               features={[
@@ -144,17 +129,15 @@ export default function Pricing() {
           </h2>
           <div className="card" style={{ overflow: 'hidden', borderRadius: '16px' }}>
             {/* Header */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 80px 80px 80px', padding: '16px 24px', borderBottom: '2px solid var(--border)', background: 'var(--bg-card)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 80px 80px', padding: '16px 24px', borderBottom: '2px solid var(--border)', background: 'var(--bg-card)' }}>
               <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Feature</span>
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center' }}>Free</span>
               <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center' }}>Proxi</span>
               <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center' }}>Max</span>
             </div>
             {/* Rows */}
             {COMPARE_ROWS.map((row, i) => (
-              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 80px 80px 80px', padding: '12px 24px', borderBottom: '1px solid var(--border)', alignItems: 'center' }}>
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 80px 80px', padding: '12px 24px', borderBottom: '1px solid var(--border)', alignItems: 'center' }}>
                 <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{row.feature}</span>
-                <span style={{ textAlign: 'center' }}><CompareCell val={row.free} /></span>
                 <span style={{ textAlign: 'center' }}><CompareCell val={row.proxi} /></span>
                 <span style={{ textAlign: 'center' }}><CompareCell val={row.max} /></span>
               </div>

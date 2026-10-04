@@ -89,7 +89,7 @@ export default function BlogPost() {
               Understanding the security helps build confidence. Here's how Proxi handles your information:
             </p>
             <p style={{ marginTop: '16px' }}>
-              <strong style={{ color: 'var(--text)' }}>Encryption in transit and at rest.</strong> All communications between you and your PA are encrypted. Messages are encrypted when stored. This is the same standard used by banks and healthcare providers.
+              <strong style={{ color: 'var(--text)' }}>Handled under PDPA.</strong> Your data is handled under Malaysia's Personal Data Protection Act 2010. Your PA reads your messages on our servers in order to act on them, so this is not end-to-end encryption, and you should share only what it needs.
             </p>
             <p style={{ marginTop: '12px' }}>
               <strong style={{ color: 'var(--text)' }}>No training on your data.</strong> Your conversations are not used to train AI models. Your business details, client names, and documents stay yours. Period.

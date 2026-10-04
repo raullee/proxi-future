@@ -82,7 +82,7 @@ export default function ROICalculator() {
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '24px', padding: '20px', borderRadius: '12px', background: 'var(--accent-light)' }}>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '4px' }}>Return on Investment</p>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '4px' }}>Illustrative return on investment · based on your inputs</p>
               <p style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent)' }}>{fmt(roiPercent)}%</p>
             </div>
           </div>

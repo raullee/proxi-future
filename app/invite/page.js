@@ -35,7 +35,7 @@ export default function InvitePage() {
 
       <main style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ maxWidth: '420px', width: '100%', padding: '24px', textAlign: 'center' }}>
-          <span className="badge" style={{ marginBottom: '20px' }}>Limited founding member spots remaining</span>
+          <span className="badge" style={{ marginBottom: '20px' }}>Founding member invitations</span>
           <h1 style={{ fontSize: '2rem', fontWeight: 800, marginTop: '20px', marginBottom: '12px' }}>
             Access is by invitation
           </h1>

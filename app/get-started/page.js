@@ -11,35 +11,11 @@ const RATINGS = {
   cant: { emoji: '🚫', label: "Can't do this (yet)", color: '#ef4444', desc: "I'm honest about my limits. This one's beyond me — for now." },
 };
 
-const WALL_IDEAS = [
-  { idea: "Manage my email inbox — read everything, flag urgent, draft replies in my tone", rating: 'love', tier: 'proxi', by: 'Lawyer, KL' },
-  { idea: "Chase 200 clients for tax documents every February without me losing my mind", rating: 'love', tier: 'proxi', by: 'Accountant, PJ' },
-  { idea: "Handle WhatsApp inquiries at 2am so I don't lose leads to competitors", rating: 'love', tier: 'proxi', by: 'Property agent, Penang' },
-  { idea: "Coordinate 15 subcontractors across 3 construction sites", rating: 'like', tier: 'max', by: 'Contractor, JB' },
-  { idea: "Draft employment contracts for part-time staff with all the right clauses", rating: 'love', tier: 'proxi', by: 'F&B owner, Bangi' },
-  { idea: "Qualify inbound leads and only ping me for the serious ones", rating: 'love', tier: 'max', by: 'Consultant, Mont Kiara' },
-  { idea: "Send fee reminders to 80 parents every month — politely", rating: 'love', tier: 'proxi', by: 'Tuition centre, Cheras' },
-  { idea: "Build me a custom CRM from scratch inside WhatsApp", rating: 'stretch', tier: 'max', by: 'Startup founder, KL' },
-  { idea: "Monitor 50 competitor websites and alert me to price changes", rating: 'like', tier: 'max', by: 'E-commerce seller, Klang' },
-  { idea: "Replace my entire HR department", rating: 'cant', tier: null, by: 'SME owner, Cyberjaya' },
-  { idea: "Track every shipment from 3 suppliers and notify me only when something's late", rating: 'love', tier: 'max', by: 'Logistics, Shah Alam' },
-  { idea: "Pick up my dry cleaning", rating: 'cant', tier: null, by: 'Everyone, everywhere' },
-  { idea: "Prepare patient follow-up messages after every appointment", rating: 'love', tier: 'proxi', by: 'Dental clinic, Bangsar' },
-  { idea: "Write my wedding speech", rating: 'stretch', tier: 'proxi', by: 'Nervous best man, PJ' },
-  { idea: "Automate my entire invoicing workflow — generate, send, chase, reconcile", rating: 'love', tier: 'max', by: 'Freelancer, Damansara' },
-  { idea: "Manage vendor negotiations across 4 events simultaneously", rating: 'like', tier: 'max', by: 'Event planner, KL' },
-  { idea: "Read a 200-page contract and tell me what I should worry about", rating: 'like', tier: 'max', by: 'Business owner, Ampang' },
-  { idea: "Be my therapist", rating: 'cant', tier: null, by: 'Honestly, fair question' },
-];
-
 export default function GetStarted() {
   const [idea, setIdea] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [filter, setFilter] = useState('all');
-
-  const filtered = filter === 'all' ? WALL_IDEAS : WALL_IDEAS.filter(w => w.rating === filter);
 
   const [submitting, setSubmitting] = useState(false);
 
@@ -115,56 +91,6 @@ export default function GetStarted() {
               </p>
             </div>
           )}
-        </section>
-
-        {/* ─── THE WALL ─── */}
-        <section style={{ maxWidth: '800px', margin: '0 auto', padding: '0 24px 24px' }}>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '8px', textAlign: 'center' }}>The Wall</h2>
-          <p style={{ fontSize: '1rem', color: 'var(--text-muted)', textAlign: 'center', marginBottom: '24px' }}>
-            Real ideas people have pitched. Naoise rated each one.
-          </p>
-
-          {/* Filter */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '8px', marginBottom: '28px' }}>
-            <button onClick={() => setFilter('all')}
-              className={filter === 'all' ? 'cta-btn' : 'cta-btn-outline'}
-              style={{ padding: '6px 16px', fontSize: '0.75rem', border: filter === 'all' ? 'none' : '1px solid var(--border)', borderRadius: '100px', cursor: 'pointer' }}>
-              All
-            </button>
-            {Object.entries(RATINGS).map(([key, r]) => (
-              <button key={key} onClick={() => setFilter(key)}
-                className={filter === key ? 'cta-btn' : 'cta-btn-outline'}
-                style={{ padding: '6px 16px', fontSize: '0.75rem', border: filter === key ? 'none' : '1px solid var(--border)', borderRadius: '100px', cursor: 'pointer' }}>
-                {r.emoji} {r.label}
-              </button>
-            ))}
-          </div>
-        </section>
-
-        <section style={{ maxWidth: '800px', margin: '0 auto', padding: '0 24px 60px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
-            {filtered.map((w, i) => {
-              const r = RATINGS[w.rating];
-              return (
-                <div key={i} className="card" style={{ padding: '20px', borderLeft: `3px solid ${r.color}`, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.5, flex: 1 }}>"{w.idea}"</p>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', fontStyle: 'italic' }}>— {w.by}</span>
-                      {w.tier && (
-                        <span style={{ fontSize: '0.6rem', fontWeight: 700, padding: '2px 8px', borderRadius: '100px', background: w.tier === 'max' ? 'var(--accent)' : 'var(--border)', color: w.tier === 'max' ? 'white' : 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                          {w.tier === 'max' ? 'Max' : 'Proxi'}
-                        </span>
-                      )}
-                    </div>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: r.color, display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      {r.emoji} {r.label}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </section>
 
         {/* ─── RATING KEY ─── */}
