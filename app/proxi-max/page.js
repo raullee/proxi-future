@@ -169,7 +169,7 @@ export default function ProxiMaxPage() {
               { icon: '🔗', title: 'Integration engineering', desc: 'APIs, databases, custom tools — advanced integration engineering for your stack.' },
               { icon: '🔀', title: 'Workflow orchestration', desc: 'Multi-step process automation for complex operations across systems.' },
               { icon: '💳', title: 'Payments', desc: 'Stripe integration, invoice chasing, payment reminders.' },
-              { icon: '⚡', title: '5-min response', desc: 'Your PA responds fast. Because being there when it matters is everything.' },
+              { icon: '⚡', title: 'Priority support', desc: 'Priority support, with human handover during business hours.' },
             ].map((item, i) => (
               <div key={i} className="card" style={{ padding: '20px', display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                 <span style={{ fontSize: '1.3rem', flexShrink: 0 }}>{item.icon}</span>

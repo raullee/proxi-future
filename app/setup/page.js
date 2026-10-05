@@ -104,7 +104,7 @@ export default function Setup() {
                 { step: 'Lead capture workflows', desc: 'Inbound inquiry handling — your PA qualifies leads, scores them, and routes to you with context' },
                 { step: 'Integration wiring', desc: 'APIs, databases, CRM, custom tools — connected and orchestrated as one automated system' },
                 { step: 'Extended testing & QA', desc: 'Every integration tested end-to-end — workflow automation, lead routing, multi-channel responses, edge cases' },
-                { step: 'Priority support setup', desc: '5-minute response time SLA configured — your PA escalates faster and we respond faster if something breaks' },
+                { step: 'Priority support setup', desc: 'Priority support configured, with human handover during business hours if something breaks' },
               ].map((item, i) => (
                 <li key={i} style={{ padding: '12px 0', borderBottom: '1px solid var(--border)' }}>
                   <div style={{ display: 'flex', gap: '12px' }}>

@@ -158,8 +158,8 @@ export default function ProxiTier() {
               <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>messages/month</p>
             </div>
             <div className="card" style={{ padding: '24px', textAlign: 'center' }}>
-              <p style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent)' }}>15 min</p>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>response time</p>
+              <p style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent)' }}>Human</p>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>handover during business hours</p>
             </div>
           </div>
         </section>

@@ -38,7 +38,7 @@ export default function BlogPost() {
               Same job title. Same salary band. Wildly different output. Guess which one gets promoted.
             </p>
 
-            <h2 style={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--text)', marginTop: '40px', marginBottom: '16px' }}>The 5× Factor</h2>
+            <h2 style={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--text)', marginTop: '40px', marginBottom: '16px' }}>The AI Factor</h2>
             <p>
               We've seen AI-enabled PAs handle the workload of five traditional PAs. That sounds like exaggeration — it's not. Here's why the multiplier is so dramatic:
             </p>

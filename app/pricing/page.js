@@ -49,7 +49,7 @@ const COMPARE_ROWS = [
   { feature: 'Workflow orchestration', proxi: false, max: true },
   { feature: 'Process automation', proxi: false, max: true },
   { feature: 'Stripe & payments', proxi: false, max: true },
-  { feature: 'Response time', proxi: '15 min', max: '5 min' },
+  { feature: 'Support', proxi: 'Standard', max: 'Priority' },
   { feature: 'Messages/month', proxi: '2,000', max: 'Unlimited' },
 ];
 
@@ -91,7 +91,7 @@ export default function Pricing() {
                 "Google Workspace integration",
                 "Follow-ups & reminders",
                 "2,000 messages/month",
-                "15-minute response time",
+                "Human handover during business hours",
               ]}
               cta="Get started →"
               ctaLink="/invite"
@@ -111,7 +111,7 @@ export default function Pricing() {
                 "Workflow management & orchestration",
                 "Stripe & payment integration",
                 "Unlimited messages",
-                "5-minute response time",
+                "Priority support",
               ]}
               cta="Go superhero →"
               ctaLink="/invite"
@@ -156,7 +156,7 @@ export default function Pricing() {
               You don't want a PA — you want an AI operations team. We sit with your team, audit your workflows, and build custom agents that understand your business, your clients, and your vocabulary. Not SaaS — partnership.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '24px' }}>
-              {['Full AI ops audit', 'Custom agent architecture', 'Multi-agent coordination', 'Team onboarding', 'Monthly strategy reviews', 'Priority SLA'].map((item, i) => (
+              {['Full AI ops audit', 'Custom agent architecture', 'Multi-agent coordination', 'Team onboarding', 'Monthly strategy reviews', 'Priority support'].map((item, i) => (
                 <span key={i} style={{ padding: '6px 14px', borderRadius: '100px', border: '1px solid var(--border)', fontSize: '0.8rem', color: 'var(--text-muted)' }}>{item}</span>
               ))}
             </div>

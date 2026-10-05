@@ -92,9 +92,6 @@ export default function BlogPost() {
               <strong style={{ color: 'var(--text)' }}>Handled under PDPA.</strong> Your data is handled under Malaysia's Personal Data Protection Act 2010. Your PA reads your messages on our servers in order to act on them, so this is not end-to-end encryption, and you should share only what it needs.
             </p>
             <p style={{ marginTop: '12px' }}>
-              <strong style={{ color: 'var(--text)' }}>No training on your data.</strong> Your conversations are not used to train AI models. Your business details, client names, and documents stay yours. Period.
-            </p>
-            <p style={{ marginTop: '12px' }}>
               <strong style={{ color: 'var(--text)' }}>Isolated instances.</strong> Your PA's memory is separate from every other user's PA. There's no cross-contamination of data between users.
             </p>
             <p style={{ marginTop: '12px' }}>

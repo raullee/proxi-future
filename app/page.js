@@ -62,7 +62,7 @@ const patterns = [
   { re: /(what.*can.*you|capabilit|help|how.*work|what.*do)/i, r: ["I handle:<br/>◆ Email triage + drafts · calendar + rescheduling · follow-ups any cadence<br/>◆ Research with citations · client intake + conflicts · invoice chasers<br/>◆ Custom workflows (Max tier) · multi-language (BM/EN/中文)<br/>◆ On WhatsApp, email, Slack; no new app.<br/>In <em>demo mode</em> I show what it feels like. Try a chip on the left."] },
   { re: /(demo|book.*call|sales|talk.*team|enterprise)/i, r: ["Sorted ✓<br/>Enterprise → human within 2h. For now: <a href='/waitlist' style='color:inherit;text-decoration:underline'>/waitlist</a> or invite at <a href='/invite' style='color:inherit;text-decoration:underline'>/invite</a>. Want me to draft an email to the sales team?"] },
   { re: /(thanks|thank you|thx|terima kasih|tq)/i, r: ["Any time. ✓ In production I'd be here every hour of the week. This is just a taste."] },
-  { re: /(who are you|what are you|are you.*(real|human|ai)|naoise)/i, r: ["I'm <em>Naoise</em>; Proxi's first operator. Live since Feb 2026 for Axon Avenue. In this sandbox I'm simulated; in production I live on your WhatsApp, read your inbox, write on your calendar, remember your clients. Tap a chip."] },
+  { re: /(who are you|what are you|are you.*(real|human|ai)|naoise)/i, r: ["I'm <em>Naoise</em>; Proxi's first operator, running for Axon Avenue. In this sandbox I'm simulated; in production I live on your WhatsApp, read your inbox, write on your calendar, remember your clients. Tap a chip."] },
   { re: /(invite|code|founding|trip|raul|test200)/i, r: ["Invite codes I recognise:<br/>◆ <b>FOUNDING5</b> · Max · RM 499 locked forever · setup waived<br/>◆ <b>TRIPTANK</b> · Max · 3 months locked<br/>◆ <b>RAUL</b> · founder access<br/>◆ <b>TEST200</b> · Proxi · 6 months locked · setup 50% off<br/>Paste one in the hero validator above ↑"] },
 ];
 const fallback = "In production I'd handle that. In demo mode I'm sharpest at:<br/>◆ Email triage + drafts<br/>◆ Calendar (clear / reschedule / book)<br/>◆ Follow-ups + invoice chasers<br/>◆ Research with citations<br/>Try a chip on the left, or phrase it more specifically.";
@@ -353,7 +353,7 @@ export default function ProxiPage() {
         .px-case{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
         @media (max-width:900px){.px-case{grid-template-columns:1fr}}
         .px-case .stats{aspect-ratio:4/5;width:100%;max-width:420px;margin:0 auto;background:var(--panel);border:1px solid var(--line);position:relative;padding:28px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
-        .px-case .stats::before{content:"NAOISE · LIVE · WEEK 1";position:absolute;top:14px;right:14px;font-size:10px;letter-spacing:.22em;color:var(--phos);text-transform:uppercase}
+        .px-case .stats::before{content:"NAOISE · IN PRODUCTION";position:absolute;top:14px;right:14px;font-size:10px;letter-spacing:.22em;color:var(--phos);text-transform:uppercase}
         .px-case .stats::after{content:"";position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(180deg,transparent,rgba(122,255,177,.08))}
         .px-case .stats .metric{padding:14px;border:1px solid var(--line);background:var(--black);position:relative;z-index:2}
         .px-case .stats .metric b{display:block;font-family:"Instrument Serif",serif;font-style:italic;font-size:40px;color:var(--phos);line-height:1}
@@ -812,25 +812,25 @@ export default function ProxiPage() {
           <div className="px-sec-h">
             <span className="tag">/07 · Case study</span>
             <h2>Meet <em>Naoise</em>. In production.</h2>
-            <div className="r">Live since Feb 2026 · Week 1 data</div>
+            <div className="r">Internal deployment · Axon Avenue</div>
           </div>
           <div className="px-case">
             <div className="stats">
-              <div className="metric"><b>28</b><span>posts published · week 1</span><small>▸ across 6 platforms</small></div>
-              <div className="metric"><b>6</b><span>platforms managed</span><small>▸ IG · Threads · Blog · Twitter · LinkedIn · TikTok</small></div>
-              <div className="metric"><b>24/7</b><span>always-on presence</span><small>▸ under 5min DM response</small></div>
+              <div className="metric"><b>Social</b><span>content drafted and published</span><small>▸ human-approved</small></div>
+              <div className="metric"><b>Multi</b><span>channel presence</span><small>▸ social · blog · WhatsApp</small></div>
+              <div className="metric"><b>24/7</b><span>always-on presence</span><small>▸ human handover when needed</small></div>
               <div className="metric"><b>3</b><span>languages handled</span><small>▸ BM · EN · 中文</small></div>
             </div>
             <div className="copy">
               <h3>Our first <em>Digital Engagement Officer.</em></h3>
-              <p>Naoise went live February 2026 as Axon Avenue&apos;s operator-in-chief. She runs our social presence, lead qualification, content calendar, scouting, inbound, and comms; across six platforms, 24/7. She&apos;s the team member who makes everyone else more effective.</p>
+              <p>Naoise is Axon Avenue&apos;s operator-in-chief. She runs our social presence, lead qualification, content calendar, scouting, inbound, and comms; across our channels, 24/7. She&apos;s the team member who makes everyone else more effective.</p>
               <div className="px-case-caps">
-                <div className="cc"><b>Social</b>6 platforms · 28 posts/wk</div>
+                <div className="cc"><b>Social</b>Posting · engagement</div>
                 <div className="cc"><b>Content</b>Calendar · drafting · voice-matched</div>
                 <div className="cc"><b>Scouting</b>Leads · partners · press</div>
                 <div className="cc"><b>Inbound</b>Qualification · routing</div>
                 <div className="cc"><b>Comms</b>WhatsApp · email · DMs</div>
-                <div className="cc"><b>Presence</b>Under 5min DM response</div>
+                <div className="cc"><b>Presence</b>Always-on DMs</div>
               </div>
               <div style={{marginTop:"28px",display:"flex",gap:"10px",flexWrap:"wrap"}}>
                 <a className="px-btn solid" href="/naoise">▸ Full case study</a>
@@ -918,7 +918,7 @@ export default function ProxiPage() {
                 <li>Everything in Proxi</li>
                 <li>Custom workflow design &amp; orchestration</li>
                 <li>Deep integrations (Notion, Stripe, Linear, HubSpot)</li>
-                <li>Priority operator · 2-min SLA during day</li>
+                <li>Priority support · human handover during business hours</li>
                 <li>Quarterly workflow audits</li>
                 <li>5 to 10 day setup</li>
               </ul>
@@ -959,7 +959,7 @@ export default function ProxiPage() {
         <div className="px-wrap">
           <div className="px-trust">
             <div className="px-tb"><span className="ic">e</span>Handled under PDPA 2010 · <a href="/discretion" style={{color:"var(--phos)",borderBottom:"1px solid var(--phos)",paddingBottom:"1px"}}>pledge →</a></div>
-            <div className="px-tb"><span className="ic">p</span>Your data is never used for training</div>
+            <div className="px-tb"><span className="ic">p</span>Your data is never sold</div>
             <div className="px-tb"><span className="ic">x</span>Cancel any time · no contracts</div>
             <div className="px-tb"><span className="ic">g</span>7-day money-back guarantee</div>
           </div>
@@ -981,7 +981,7 @@ export default function ProxiPage() {
             <details><summary>Can I talk to Naoise directly before committing?</summary><div className="a">Yes; message <b>+60 12-747 8227</b> on WhatsApp with the word <b>&quot;PROXI&quot;</b>. Naoise enters demo-operator mode and answers in real time. Or DM <a href="https://instagram.com/asknaoise" target="_blank" rel="noopener noreferrer">@asknaoise on Instagram</a>.</div></details>
             <details><summary>Can I try before committing?</summary><div className="a">Yes. Every invitation code unlocks 72 hours of full Proxi Max access. No credit card required. After 72 hours, you decide. See <a href="/trial-upgrade">trial upgrade terms</a>.</div></details>
             <details><summary>What if I want to cancel?</summary><div className="a">Cancel any time. No contracts, no penalties, no retention calls. 7-day money-back guarantee. See <a href="/terms">Terms</a>.</div></details>
-            <details><summary>Do you offer something for people who already have a human PA?</summary><div className="a">Yes; <a href="/pa4pa">PA4PA (PA for PA)</a>. A 4-week intensive that trains your human PA to use AI tools so they deliver 5× the output. RM 75/mo.</div></details>
+            <details><summary>Do you offer something for people who already have a human PA?</summary><div className="a">Yes; <a href="/pa4pa">PA4PA (PA for PA)</a>. A 4-week intensive that trains your human PA to use AI tools. RM 75/mo.</div></details>
             <details><summary>Do you support BM and mixed language?</summary><div className="a">Yes; BM, English, Chinese, and mixed. Naoise detects the sender&apos;s language and responds in kind, in your voice. Tested against real Malaysian conversations.</div></details>
           </div>
         </div>

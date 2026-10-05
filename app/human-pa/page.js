@@ -188,7 +188,7 @@ export default function HumanPA() {
               If you're hiring a human PA, do them (and yourself) a favour: make sure they know how to use AI. Our one-month intensive takes any PA from zero to AI-powered operator.
             </p>
             <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '24px' }}>
-              Daily lessons via WhatsApp. Real exercises. Real tools. By the end, your human PA will be operating at 5× capacity — and you'll wonder why you ever considered doing it the old way.
+              Daily lessons via WhatsApp. Real exercises. Real tools. By the end, your human PA will be working with AI as a matter of routine.
             </p>
             <p style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '4px' }}>
               <span style={{ textDecoration: 'line-through', color: 'var(--text-light)', fontWeight: 400, fontSize: '1.1rem' }}>RM499</span>{' '}

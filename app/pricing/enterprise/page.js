@@ -53,7 +53,7 @@ export default function Enterprise() {
               'Team onboarding & training',
               'Change management support',
               'Monthly strategy reviews',
-              'Priority support & SLA',
+              'Priority support',
               'Custom integrations',
               'Data privacy & compliance',
             ].map((item, i) => (

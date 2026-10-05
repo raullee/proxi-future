@@ -9,7 +9,7 @@ const VERTICALS = [
   { icon: '💼', name: 'Business & Consulting', slug: 'business', desc: 'Client coordination, proposal drafting, invoicing, meeting management — the back-office you never hired.' },
   { icon: '🚀', name: 'SME & Startups', slug: 'sme', desc: 'Wearing too many hats? Cash flow tracking, supplier follow-ups, marketing — one operator handles the chaos.' },
   { icon: '👨‍⚕️', name: 'Medical & Healthcare', slug: 'medical', desc: 'Appointment scheduling, patient follow-ups, insurance paperwork, prescription management — care without the admin.' },
-  { icon: '📋', name: 'Admin, BPO & Personal Assistants', slug: 'admin-bpo', desc: 'You manage other people\'s chaos for a living. Now manage it 5× faster. AI-powered workflows for PAs, EAs, and BPO teams who want to handle more clients without burning out.' },
+  { icon: '📋', name: 'Admin, BPO & Personal Assistants', slug: 'admin-bpo', desc: 'You manage other people\'s chaos for a living. Now manage it with AI. AI-powered workflows for PAs, EAs, and BPO teams who want to handle more clients without burning out.' },
   { icon: '🎓', name: 'Teachers, Tutors & Trainers', slug: 'education', desc: 'Parent WhatsApps, lesson planning, fee collection, progress reports — spend your time teaching, not chasing admin.' },
   { icon: '📈', name: 'Sales & Business Development', slug: 'sales', desc: 'Lead follow-ups, proposal tracking, meeting scheduling, CRM updates — your PA chases the pipeline so you can close it.' },
   { icon: '🚛', name: 'Logistics & Supply Chain', slug: 'logistics', desc: 'Shipment tracking, vendor coordination, delivery scheduling, document management — less time on spreadsheets, more time on operations.' },

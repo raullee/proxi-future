@@ -15,7 +15,7 @@ export default function PA4PA() {
             AI PA for <span className="gradient-text">PAs.</span>
           </h1>
           <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', maxWidth: '540px', margin: '0 auto 16px', lineHeight: 1.6 }}>
-            A one-month intensive course for personal assistants who want to 10× their output with AI. <span style={{ textDecoration: 'line-through', color: 'var(--text-light)' }}>RM499</span> <span style={{ color: 'var(--accent)', fontWeight: 800 }}>RM75/month</span>
+            A one-month intensive course for personal assistants who want to work with AI. <span style={{ textDecoration: 'line-through', color: 'var(--text-light)' }}>RM499</span> <span style={{ color: 'var(--accent)', fontWeight: 800 }}>RM75/month</span>
           </p>
           <p style={{ fontSize: '1rem', color: 'var(--text-muted)', maxWidth: '480px', margin: '0 auto 36px', lineHeight: 1.6 }}>
             From zero to hero. Daily lessons. Real tools. By the end, you'll be the PA who makes everyone else look like they're still using fax machines.
@@ -28,7 +28,7 @@ export default function PA4PA() {
           <div className="card" style={{ padding: '36px', borderLeft: '3px solid var(--accent)' }}>
             <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '16px' }}>The PA industry is about to split in two.</h2>
             <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.75, marginBottom: '16px' }}>
-              PAs who use AI will handle 5× the workload in half the time. PAs who don't will be replaced by PAs who do. This isn't a threat — it's an opportunity. The best PAs will be the ones who learn to work with AI, not against it.
+              PAs who use AI will handle more of the workload. PAs who don't will be replaced by PAs who do. This isn't a threat; it's an opportunity. The best PAs will be the ones who learn to work with AI, not against it.
             </p>
             <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.75 }}>
               This course was built by the team behind Proxi — we've spent months building AI PAs that actually work. Now we're teaching human PAs to use the same tools.

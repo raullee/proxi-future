@@ -11,7 +11,7 @@ const PAIN_POINTS = [
 ];
 
 const SOLUTIONS = [
-  { title: 'Instant lead follow-up', desc: 'Your PA sends personalised follow-ups within minutes of meeting someone. Warm, relevant, and timed perfectly — before the lead goes cold.' },
+  { title: 'Instant lead follow-up', desc: 'Your PA sends personalised follow-ups soon after you meet someone. Warm, relevant, and timed before the lead goes cold.' },
   { title: 'CRM-aware conversation tracking', desc: 'Your PA logs calls, updates deal stages, and captures notes automatically. Your CRM stays current without you touching it.' },
   { title: 'Proposal first drafts in minutes', desc: 'Your PA generates customised proposals based on your conversation notes and templates. You polish the last 10% — not the first 90%.' },
   { title: 'Zero-friction scheduling', desc: 'Your PA handles the back-and-forth, finds mutual availability, and books meetings. You just show up and sell.' },

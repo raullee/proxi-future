@@ -50,7 +50,7 @@ const POSTS = [
     category: 'PA Careers',
     color: '#f59e0b',
     title: "The PA Who Uses AI Will Replace the PA Who Doesn't",
-    excerpt: "This isn't about AI replacing assistants. It's about AI-enabled assistants replacing those who refuse to adapt. The best PAs in 2026 handle 5× the workload because they work with AI, not against it. Here's how to be on the right side of that split.",
+    excerpt: "This isn't about AI replacing assistants. It's about AI-enabled assistants replacing those who refuse to adapt. The best PAs in 2026 handle more because they work with AI, not against it. Here's how to be on the right side of that split.",
     slug: 'ai-pa-careers',
   },
   {
