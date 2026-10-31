@@ -469,6 +469,11 @@ export default function ProxiPage() {
         .px-footer .socials a:hover{border-color:var(--phos);color:var(--phos)}
         .px-footer .pa4pa{margin-top:20px;padding:12px 14px;border:1px dashed var(--line-bright);background:var(--panel);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
         .px-footer .pa4pa a{color:var(--amber);padding:0;display:inline}
+        .px-footer a.parent{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:10px 14px;border:1px solid var(--line-bright);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--off-2)}
+        .px-footer a.parent b{color:var(--phos);font-weight:600;white-space:nowrap}
+        @media (max-width:780px){.px-footer a.parent{font-size:10px;letter-spacing:.12em;gap:6px;padding:10px 12px;white-space:nowrap}}
+        .px-footer a.parent:hover{border-color:var(--phos);color:var(--phos)}
+        .px-footer .colophon a{display:inline;padding:0;font-size:inherit;color:inherit;text-decoration:underline;text-underline-offset:3px}
         .px-footer .colophon{margin-top:44px;border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);flex-wrap:wrap;gap:12px}
 
         /* MOBILE */
@@ -1013,6 +1018,7 @@ export default function ProxiPage() {
                 <a href="https://threads.net/@asknaoise" target="_blank" rel="noopener noreferrer">▸ Threads</a>
                 <a href="https://naoise-blog.vercel.app" target="_blank" rel="noopener noreferrer">▸ Blog</a>
               </div>
+              <a className="parent" href="https://axonavenue.my" title="Axon Avenue PLT, Malaysian software holding company">An <b>Axon Avenue</b> company <span aria-hidden="true">&rarr;</span></a>
               <div className="pa4pa">Already have a human PA? → <a href="/pa4pa">Proxi for the PA</a></div>
             </div>
             <div>
@@ -1054,7 +1060,7 @@ export default function ProxiPage() {
             </div>
           </div>
           <div className="colophon">
-            <span>© 2026 Axon Avenue PLT · LLP0035183-LGN</span>
+            <span>© 2026 <a href="https://axonavenue.my">Axon Avenue PLT</a> · LLP0035183-LGN</span>
             <span>Built in KL · Powered by frontier-class intelligence</span>
             <span>Status · ● operational</span>
           </div>

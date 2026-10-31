@@ -6,6 +6,7 @@ export default function Footer() {
           <div>
             <p className="gradient-text" style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '8px' }}>Proxi</p>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', lineHeight: 1.6 }}>The operator you never had to hire.<br/>Your dedicated operator on WhatsApp.</p>
+            <a href="https://axonavenue.my" title="Axon Avenue PLT, Malaysian software holding company" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: '14px', padding: '8px 12px', border: '1px solid var(--border)', borderRadius: '8px', fontSize: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none' }}>An <strong style={{ color: 'inherit', fontWeight: 700 }}>Axon Avenue</strong> company <span aria-hidden="true">&rarr;</span></a>
             <p style={{ fontSize: '0.7rem', color: 'var(--text-light)', marginTop: '8px', lineHeight: 1.6 }}>Axon Avenue PLT<br/>(LLP0035183-LGN)<br/>Malaysia 🇲🇾</p>
           </div>
           <div>
@@ -29,7 +30,7 @@ export default function Footer() {
           </div>
         </div>
         <div style={{ borderTop: '1px solid var(--border)', paddingTop: '16px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px' }}>
-          <p style={{ fontSize: '0.7rem', color: 'var(--text-light)' }}>© 2026 Axon Avenue PLT. All rights reserved.</p>
+          <p style={{ fontSize: '0.7rem', color: 'var(--text-light)' }}>© 2026 <a href="https://axonavenue.my" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Axon Avenue PLT</a>. All rights reserved.</p>
           <div style={{ display: 'flex', gap: '16px', fontSize: '0.7rem', color: 'var(--text-light)' }}>
             <span>TIN: PT 59569110020</span>
             <span>Reg: 202304001247</span>
